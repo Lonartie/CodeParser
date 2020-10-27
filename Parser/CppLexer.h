@@ -13,7 +13,4 @@ class CppLexer : public Lexer<CppToken, CharacterTokenizer>
 public:
 	CppLexer(CharacterTokenizer::UPtr tokenizer);
 
-public:
-	std::deque<CppToken> group() override;
-	
 };

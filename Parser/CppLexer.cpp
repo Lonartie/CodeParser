@@ -4,18 +4,12 @@
 //
 //--------------------------------------------------------------------------------------------------
 #include "CppLexer.h"
+#include "CppStringLexer.h"
+#include <stack>
+
 
 CppLexer::CppLexer(CharacterTokenizer::UPtr tokenizer)
 	: Lexer<CppToken, CharacterTokenizer>(std::move(tokenizer))
 {
-	registerStateLexer<CppStringLexer>();
-}
-
-std::deque<CppToken> CppLexer::group()
-{
-	std::deque<CppToken> result;
-	std::stack<CppStates> states;
-	
-
-	return result;
+	registerTokenLexer<CppStringLexer>();
 }

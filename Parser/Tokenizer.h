@@ -13,6 +13,7 @@ class Tokenizer
 {
 public:
 	using UPtr = std::unique_ptr<Tokenizer<T>>;
+	using type = T;
 	virtual ~Tokenizer() = default;
 	virtual std::deque<T> tokenize(const QString& source) = 0;
 };

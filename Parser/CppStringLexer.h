@@ -13,6 +13,5 @@ public:
 	using UPtr = std::unique_ptr<CppStringLexer>;
 	
 public:
-	
-	
+	void run() override;
 };

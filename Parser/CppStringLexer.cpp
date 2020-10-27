@@ -5,16 +5,15 @@
 //--------------------------------------------------------------------------------------------------
 #include "CppStringLexer.h"
 
-Token test()
+void CppStringLexer::run()
 {
-	if (!accept('"'))
-		return Empty;
+	if (!accept({'"'}))
+		return;
 
 	QString content;
-	while (!accept('"') && last() != "\\")
+	while (!accept({'"'}) && last() != "\\")
 	{
-		content << last();
-		next();
+		content.append(acceptAny());
 	}
 
 	return CppStringToken(content);
