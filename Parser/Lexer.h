@@ -5,7 +5,6 @@
 //--------------------------------------------------------------------------------------------------
 #pragma once
 #include "TokenLexer.h"
-#include <QString>
 #include <memory>
 #include <deque>
 #include <functional>
@@ -36,7 +35,7 @@ public:
 
 	/*registration funcions*/
 
-	template <typename L, typename ...Args>
+	template <typename L, typename ... Args>
 	void registerTokenLexer(Args&& ... args);
 
 private:
